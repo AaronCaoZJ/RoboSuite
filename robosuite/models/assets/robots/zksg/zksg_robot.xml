@@ -1,0 +1,54 @@
+<mujoco model="ROCR6II_URDF_file">
+    <compiler angle="radian" meshdir="../meshes/" />
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <mesh name="base_link" file="base_link.stl" />
+        <mesh name="shoulder_link" file="shoulder_link.stl" />
+        <mesh name="upper_arm_link" file="upper_arm_link.stl" />
+        <mesh name="forearm_link" file="forearm_link.stl" />
+        <mesh name="wrist_1_link" file="wrist_1_link.stl" />
+        <mesh name="wrist_2_link" file="wrist_2_link.stl" />
+        <mesh name="wrist_3_link" file="wrist_3_link.stl" />
+    </asset>
+    <worldbody>
+        <geom quat="0 -5.10347e-12 -5.10336e-12 -1" type="mesh" contype="0" conaffinity="0" group="1" rgba="0.75294 0.75294 0.75294 1" mesh="base_link" />
+        <geom quat="0 -5.10347e-12 -5.10336e-12 -1" type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link" />
+        <body name="shoulder_link" pos="1.24013e-12 1.24013e-12 0.1215" quat="0 -5.10341e-12 -5.10341e-12 -1">
+            <inertial pos="7.9174e-07 0.0037223 0.0030792" quat="0.999819 0.0190198 -6.43474e-06 0.000105874" mass="6.7582" diaginertia="0.013187 0.012924 0.00811514" />
+            <joint name="shoulder_pan_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1416 3.1416" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.75294 0.75294 0.75294 1" mesh="shoulder_link" />
+            <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="shoulder_link" />
+            <body name="upper_arm_link" pos="0 0.1225 0">
+                <inertial pos="-5.4357e-07 0.0032767 0.12625" quat="0.956664 0.291193 5.03822e-06 -2.99316e-06" mass="12.877" diaginertia="0.024695 0.0194817 0.0180523" />
+                <joint name="shoulder_lift_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.1416 3.1416" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.75294 0.75294 0.75294 1" mesh="upper_arm_link" />
+                <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="upper_arm_link" />
+                <body name="forearm_link" pos="0 -0.102 0.3">
+                    <inertial pos="0.00014266 -0.0049203 0.20706" quat="0.998482 0.0550031 -0.00141582 -0.00240583" mass="4.7791" diaginertia="0.00942229 0.00732083 0.00527519" />
+                    <joint name="elbow_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.1416 3.1416" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.75294 0.75294 0.75294 1" mesh="forearm_link" />
+                    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="forearm_link" />
+                    <body name="wrist_1_link" pos="0 0 0.276">
+                        <inertial pos="5.3079e-07 0.087296 -0.010609" quat="0.99974 0.0228064 1.00901e-06 -4.4231e-05" mass="3.1072" diaginertia="0.0040287 0.0039449 0.0018782" />
+                        <joint name="wrist_1_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.1416 3.1416" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="wrist_1_link" />
+                        <geom type="mesh" rgba="1 1 1 1" mesh="wrist_1_link" />
+                        <body name="wrist_2_link" pos="0 0.09 0">
+                            <inertial pos="-5.306e-07 -0.010609 0.087296" quat="0.723049 0.690796 -3.04977e-05 3.19216e-05" mass="3.1072" diaginertia="0.0040287 0.0039449 0.0018782" />
+                            <joint name="wrist_2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.1416 3.1416" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="1 1 1 1" mesh="wrist_2_link" />
+                            <geom type="mesh" rgba="1 1 1 1" mesh="wrist_2_link" />
+                            <body name="wrist_3_link" pos="0 0 0.09">
+                                <inertial pos="-1.7145e-09 0.0649864 2.543e-05" quat="0.491788 0.508079 0.491848 0.508021" mass="0.59241" diaginertia="0.000400757 0.000248973 0.000247842" />
+                                <joint name="wrist_3_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.1416 3.1416" />
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" rgba="0.75294 0.75294 0.75294 1" mesh="wrist_3_link" />
+                                <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="wrist_3_link" />
+                                <geom size="0.005 0.005 0.005" pos="0 0.08 0" quat="0.707107 0 0 0.707107" type="box" />
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

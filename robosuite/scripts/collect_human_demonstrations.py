@@ -227,7 +227,8 @@ if __name__ == "__main__":
     env_info = json.dumps(config)
 
     # wrap the environment with data collection wrapper
-    tmp_directory = "/tmp/{}".format(str(time.time()).replace(".", "_"))
+    # tmp_directory = "/tmp/{}".format(str(time.time()).replace(".", "_"))
+    tmp_directory = "/tmp/demonstrations/test"
     env = DataCollectionWrapper(env, tmp_directory)
 
     # initialize device
