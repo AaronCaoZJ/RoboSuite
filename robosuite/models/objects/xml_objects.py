@@ -40,7 +40,21 @@ class CanObject(MujocoXMLObject):
 
     def __init__(self, name):
         super().__init__(
-            xml_path_completion("objects/refrigerator-box.xml"),
+            xml_path_completion("objects/can.xml"),
+            name=name,
+            joints=[dict(type="free", damping="0.0005")],
+            obj_type="all",
+            duplicate_collision_geoms=True,
+        )
+
+class RefrigeratorBoxObject(MujocoXMLObject):
+    """
+    Coke can object (used in PickPlace)
+    """
+
+    def __init__(self, name):
+        super().__init__(
+            xml_path_completion("objects/can.xml"),
             name=name,
             joints=[dict(type="free", damping="0.0005")],
             obj_type="all",
